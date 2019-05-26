@@ -20,19 +20,23 @@
 <body>
     <section class="player">
         <div class="source-info">
-            <span class="url dynamic" id="mediaTitle"></span>
-            <span class="time dynamic" id="currentTime">00:00:00</span>
+			<span class="song dynamic" id="sourceNowPlaying"></span>
+			<div class="source-stream-info">
+				<span class="stream dynamic" id="sourceStream"></span>
+				<span class="time dynamic" id="sourcePlayTime">00:00:00</span>
+			</div>
         </div>
         <div id="controlButtons" class="controls">
             <i id="buttonPrev" class="fas fa-step-backward previous" tabindex="0" title="Previous Source"></i>
             <i id="buttonPlay" class="fas fa-play play paused" tabindex="0" title="Play"></i>
             <i id="buttonNext" class="fas fa-step-forward next" tabindex="0" title="Next Source"></i>
             <i id="buttonStop" class="fas fa-stop stop" tabindex="0" title="Stop"></i>
-            <div id="volumesliderzone">
+            <div>
                 <div id="volumeSlider" title="Volume">
-                    <img src="images/speaker-32.png" class="ui-slider-handle" alt="Volume" />
+					<div class="ui-slider-handle">
+						<i class="fas fa-volume-up" title="Volume"><span id="currentVolume" class="volume dynamic">50%</span></i>
+					</div>
                 </div>
-                <div id="currentVolume" class="volume dynamic">50%</div>
             </div>
         </div>
     </section>
