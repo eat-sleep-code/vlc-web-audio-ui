@@ -12,7 +12,8 @@ After setting up a [PiMoRoNi PhatBeat](https://shop.pimoroni.com/products/phat-b
   * `sudo ls | grep -v requests | parallel rm -rf`
   * `sudo git clone https://github.com/eat-sleep-code/vlc-slim-web`
   * `sudo reboot`
-* After the Raspberry Pi reboots, access http://[YOURIP]:8080
+* After the Raspberry Pi reboots, access http://[YOURIP]:8080 
+  * If prompted for authentication, leave the username field blank.   The default password is `raspberry`
 
 ## Support for extended M3U files
 For the best user experience, update your playlist to use the extended M3U format.   You can edit your playlist with `sudo nano /home/pi/.config/vlc/playlist.m3u`
