@@ -1,12 +1,12 @@
-var intv = 0;
 var ccmd = "";
-var pollStatus = true;
 var current_que = 'main';
 var current_playlist_id = -1;
+var intv = 0;
+var pollStatus = true;
 var previous_playlist_id = -1;
-
-
 var stream_server = window.location.hostname;
+
+
 
 function format_time(s) {
 	var hours = Math.floor(s / 3600);
@@ -18,9 +18,13 @@ function format_time(s) {
 	return hours + ":" + minutes + ":" + seconds;
 }
 
+
+
 function toFloat(text) {
 	return parseFloat(text.replace(',', '.'));
 }
+
+
 
 function setIntv() {
 	if (intv > 0) {
@@ -39,25 +43,8 @@ function setIntv() {
 				nt = Math.max(0, $('#seekSlider').slider('value') + 10);
 				break;
 		}
-        /* switch (current_que) {
-        case 'main':
-            sendCommand({
-                'command': 'seek',
-                'val': Math.round((nt / 100) * $('#seekSlider').attr('totalLength')),
-                plreload: false
-            });
-            break;
-        case 'stream':
-            sendVLMCmd('control Current seek ' + nt);
-            break;
-		}
-		*/
 	}
 }
-
-
-
-
 
 
 
@@ -66,6 +53,7 @@ function updateStatus() {
 		url: 'requests/status.xml',
 		success: function (data, status, jqXHR) {
 			if (current_que == 'main') {
+				console.log(data);
 				$('.dynamic').empty();
 				$('#mediaTitle').append($('[name="filename"]', data).text());
 				$('#currentTime').append(format_time($('time', data).text()));
@@ -77,9 +65,9 @@ function updateStatus() {
 				}
 				$('#buttonPlay').attr('state', $('state', data).text()).attr('mrl', $('[name="filename"]', data).text());
 				if ($('state', data).text() == 'playing') {
-					$('#buttonPlay').removeClass('paused').addClass('playing');
+					$('#buttonPlay').removeClass('fa-pause').addClass('fa-play');
 				} else {
-					$('#buttonPlay').removeClass('playing').addClass('paused');
+					$('#buttonPlay').removeClass('fa-play').addClass('fa-paused');
 				}
 
 				current_playlist_id = parseInt($('currentplid', data).text());
@@ -98,45 +86,21 @@ function updateStatus() {
 	});
 }
 
+
+
 function sendCommand(params, append) {
-	if (current_que == 'stream') {
-		$.ajax({
-			url: 'requests/status.xml',
-			data: params,
-			success: function (data, status, jqXHR) {
-				console.log('1');
-				if (append != undefined) {
-					eval(append);
-				}
-				updateStatus();
+	$.ajax({
+		url: 'requests/status.xml',
+		data: params,
+		success: function (data, status, jqXHR) {
+			console.log('3');
+			if (append != undefined) {
+				eval(append);
 			}
-		});
-	} else {
-		if (params.plreload === false) {
-			$.ajax({
-				url: 'requests/status.xml',
-				data: params,
-				success: function (data, status, jqXHR) {
-					console.log('2');
-					if (append != undefined) {
-						eval(append);
-					}
-				}
-			});
-		} else {
-			$.ajax({
-				url: 'requests/status.xml',
-				data: params,
-				success: function (data, status, jqXHR) {
-					console.log('3');
-					if (append != undefined) {
-						eval(append);
-					}
-				}
-			});
 		}
-	}
+	});
 }
+
 
 
 $(function () {
@@ -149,7 +113,7 @@ $(function () {
 			$("#volumeSlider").data('clicked', true);
 		},
 		stop: function (event, ui) {
-			$("#currentVolume").empty().append(ui.value * 2 + "%");
+			$("#currentVolume").empty().append(ui.value + "%");
 			sendCommand({
 				'command': 'volume',
 				'val': Math.round(ui.value * 5.12)
@@ -210,13 +174,5 @@ $(function () {
 		return false;
 	});
 
-	/* $('.buttonszone').each(function(i){
-		$(this).mouseover(function(){
-			$(this).addClass('buttonszone_active');
-		}).mouseleave(function () {
-		$(this).removeClass('buttonszone_active');
-		});
-	});
-	*/
 	updateStatus();
 });
