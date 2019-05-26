@@ -29,14 +29,11 @@ The following is an example of the extended M3U file format:
 #EXTM3U
 
 #EXTINF:-1, Country Roads
-http://rfcmedia.streamguys1.com/countryroads.mp3?aw_0_1st.playerid=RadioTime&aw$
+http://rfcmedia.streamguys1.com/countryroads.mp3?aw_0_1st.playerid=RadioTime
 
 #EXTINF:-1, Smooth Jazz
-http://rfcmedia.streamguys1.com/smoothjazz.mp3?aw_0_1st.playerid=RadioTime&aw_0$
+http://rfcmedia.streamguys1.com/smoothjazz.mp3?aw_0_1st.playerid=RadioTime
 
 #EXTINF:-1, Today's Hits
-http://rfcmedia.streamguys1.com/MusicPulse.mp3?aw_0_1st.playerid=RadioTime&aw_0$
-
-#EXTINF:-1, Poolside
-http://tunein4.streamguys1.com/poolsfree1
+http://rfcmedia.streamguys1.com/MusicPulse.mp3?aw_0_1st.playerid=RadioTime
 ```
