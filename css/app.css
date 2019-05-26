@@ -1,0 +1,54 @@
+body
+{
+    background: rgba(0, 0, 0, 1.0);
+    color: rgba(255, 255, 255, 1.0);
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+}
+
+a,
+a:link
+{
+    color: rgba(200, 200, 200, 1.0);
+}
+
+.player
+{
+    max-width: 960px;
+    margin: auto;
+}
+
+.player > .source-info
+{
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    padding: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: auto;
+}
+
+.player > .source-info > *
+{
+    display: block;
+}
+
+.player > .source-info > .url
+{
+    font-size: 50%;
+}
+
+.player > .controls > i
+{
+    color: rgba(255, 255, 255, 0.5);
+    display: inline-block;
+    font-size: 36px;
+    padding: 20px;
+}
+
+.player > .controls > i:hover,
+.player > .controls > i:focus
+{
+    color: rgba(255, 255, 255, 1.0);
+}
