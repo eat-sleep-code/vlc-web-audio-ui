@@ -98,7 +98,6 @@ function sendCommand(params, append) {
 		url: 'requests/status.xml',
 		data: params,
 		success: function (data, status, jqXHR) {
-			console.log('3');
 			if (append != undefined) {
 				eval(append);
 			}
