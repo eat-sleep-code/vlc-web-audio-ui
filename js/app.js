@@ -53,10 +53,15 @@ function updateStatus() {
 		url: 'requests/status.xml',
 		success: function (data, status, jqXHR) {
 			if (current_que == 'main') {
-				console.log(data);
+				//console.log(data);
 				$('.dynamic').empty();
-				$('#mediaTitle').append($('[name="filename"]', data).text());
-				$('#currentTime').append(format_time($('time', data).text()));
+				if ($('[name="title"]', data).text().length > 0) {
+					$('#sourceStream').append($('[name="title"]', data).text());
+				} else {
+					$('#sourceStream').append($('[name="filename"]', data).text());
+				}
+				$('#sourceNowPlaying').append($('[name="now_playing"]', data).text());
+				$('#sourcePlayTime').append(format_time($('time', data).text()));
 				$('#currentVolume').append(Math.round($('volume', data).text() / 2.56) + '%');
 				if (!$('#volumeSlider').data('clicked')) {
 					$('#volumeSlider').slider({
@@ -65,9 +70,9 @@ function updateStatus() {
 				}
 				$('#buttonPlay').attr('state', $('state', data).text()).attr('mrl', $('[name="filename"]', data).text());
 				if ($('state', data).text() == 'playing') {
-					$('#buttonPlay').removeClass('fa-pause').addClass('fa-play');
+					$('#buttonPlay').removeClass('fa-play').addClass('fa-pause');
 				} else {
-					$('#buttonPlay').removeClass('fa-play').addClass('fa-paused');
+					$('#buttonPlay').removeClass('fa-pause').addClass('fa-play');
 				}
 
 				current_playlist_id = parseInt($('currentplid', data).text());
@@ -131,12 +136,10 @@ $(function () {
 	});
 
 	$('#buttonPlay').click(function () {
-		current_id = 0;
 		if ($(this).attr('state') == 'stopped') {
-			var id = current_id;
 			sendCommand({
 				'command': 'pl_play',
-				'id': id
+				'id': current_playlist_id
 			});
 		} else {
 			sendCommand({
