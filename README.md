@@ -2,9 +2,12 @@
 
 After setting up a [PiMoRoNi PhatBeat](https://shop.pimoroni.com/products/phat-beat) to stream internet radio via VLC audio, I discovered that VLC apparently hasn't updated their web player since 1996.   It is a mish-mash of tiny icons and features that don't apply on a headless Raspberry Pi.
 
+___
+
 The code in this repository removes unused features, improves the user experience.   It also adds support for showing the actual song being played.
 
 ![alt text](https://github.com/eat-sleep-code/vlc-slim-web/blob/master/screenshot.png)
+___
 
 ## Implementation
 
@@ -16,6 +19,7 @@ The code in this repository removes unused features, improves the user experienc
   * `sudo reboot`
 * After the Raspberry Pi reboots, access http://[YOURIP]:8080 
   * If prompted for authentication, leave the username field blank.   The default password is `raspberry`
+___
 
 ## Support for extended M3U files
 For the best user experience, update your playlist to use the extended M3U format.   You can edit your playlist with `sudo nano /home/pi/.config/vlc/playlist.m3u`
