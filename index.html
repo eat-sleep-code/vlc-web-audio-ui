@@ -20,24 +20,22 @@
 <body>
     <section class="player">
         <div class="source-info">
-			<span class="song dynamic" id="sourceNowPlaying"></span>
 			<div class="source-stream-info">
 				<span class="stream dynamic" id="sourceStream"></span>
 				<span class="time dynamic" id="sourcePlayTime">00:00:00</span>
 			</div>
+			<span class="song dynamic" id="sourceNowPlaying"></span>
         </div>
         <div id="controlButtons" class="controls">
             <i id="buttonPrev" class="fas fa-step-backward previous" tabindex="0" title="Previous Source"></i>
             <i id="buttonPlay" class="fas fa-play play paused" tabindex="0" title="Play"></i>
             <i id="buttonNext" class="fas fa-step-forward next" tabindex="0" title="Next Source"></i>
             <i id="buttonStop" class="fas fa-stop stop" tabindex="0" title="Stop"></i>
-            <div>
-                <div id="volumeSlider" title="Volume">
-					<div class="ui-slider-handle">
-						<i class="fas fa-volume-up" title="Volume"><span id="currentVolume" class="volume dynamic">50%</span></i>
-					</div>
-                </div>
-            </div>
+			<div id="volumeSlider" class="volume-slider" title="Volume">
+				<div class="ui-slider-handle volume-slider-handle">
+					<i class="fas fa-volume-up" title="Volume"><span id="currentVolume" class="volume dynamic">50%</span></i>
+				</div>
+			</div>
         </div>
     </section>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
