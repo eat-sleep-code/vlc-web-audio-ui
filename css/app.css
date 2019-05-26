@@ -1,8 +1,8 @@
 body
 {
-    background: rgba(0, 0, 0, 1.0);
-    color: rgba(255, 255, 255, 1.0);
-    font-family: 'Raleway', sans-serif;
+	background: rgba(0, 0, 0, 1.0);
+	color: rgba(255, 255, 255, 1.0);
+	font-family: 'Raleway', sans-serif;
 	font-size: 24px;
 	padding: 10px;
 }
@@ -10,28 +10,28 @@ body
 a,
 a:link
 {
-    color: rgba(200, 200, 200, 1.0);
+	color: rgba(200, 200, 200, 1.0);
 }
 
 .player
 {
-    max-width: 960px;
-    margin: auto;
+	max-width: 960px;
+	margin: auto;
 }
 
 .player .source-info
 {
-    background-color: rgba(255, 255, 255, 0.1);
+	background-color: rgba(255, 255, 255, 0.1);
 	border-radius: 2px;
 	min-height: 48px;
-    overflow: hidden;
-    padding: 20px;
-    width: auto;
+	overflow: hidden;
+	padding: 20px;
+	width: auto;
 }
 
 .player .source-info *
 {
-    display: block;
+	display: block;
 }
 
 .player .source-info .source-stream-info
@@ -43,9 +43,9 @@ a:link
 .player .source-info .source-stream-info span
 {
 	overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 50%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 50%;
 }
 
 .player .source-info .source-stream-info .time 
@@ -60,16 +60,16 @@ a:link
 }
 .player .controls > i
 {
-    color: rgba(255, 255, 255, 0.5);
-    display: inline-block;
-    font-size: 32px;
-    padding: 20px;
+	color: rgba(255, 255, 255, 0.5);
+	display: inline-block;
+	font-size: 32px;
+	padding: 20px 12px;
 }
 
 .player .controls > i:hover,
 .player .controls > i:focus
 {
-    color: rgba(255, 255, 255, 1.0);
+	color: rgba(255, 255, 255, 1.0);
 }
 
 .player .controls .volume-slider
@@ -97,12 +97,11 @@ a:link
 	font-family: 'Raleway', sans-serif;
 	font-size: 14px;
 	padding: 0 4px 0 4px;
-	vertical-align: middle;
+	vertical-align: 3px;
 }
 
 .ui-widget-header
 {
-	background-image: linear-gradient(45deg, rgba(0, 150, 199, 0.1), rgba(0, 150, 199, 1.0)); 
+	background-image: linear-gradient(45deg, rgba(0, 0, 0, 1.0), rgba(0, 150, 199, 1.0));
 	border-radius: 0 !important;
 }
-
