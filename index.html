@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<title>Speaker Control Panel</title>
+		<meta charset="utf-8" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+		<meta name="application-name" content="Speaker Control Panel" />
+		<meta name="theme-color" content="#000000" />
+		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" href="/css/app.css" />
+		<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+		<link rel="icon" sizes="192x192" href="/images/icon-192x192.png" type="image/png" />
+		<link rel="apple-touch-icon" sizes="76x76" href="/images/icon-76x76.png" type="image/png" />
+		<link rel="apple-touch-icon" sizes="120x120" href="/images/icon-120x120.png" type="image/png" />
+		<link rel="apple-touch-icon" sizes="152x152" href="/images/icon-152x152.png" type="image/png" />		
+	</head>
+	<body>
+			<div class="centered">
+			<div id="mainContainer" class="centered">
+			<div id="controlContainer" class="ui-widget">
+				<div id="controlTable" class="ui-widget-content">
+					<ul id="controlButtons">
+						<li id="buttonPrev" class="button48  ui-corner-all" title="Previous"></li>
+						<li id="buttonPlay" class="button48  ui-corner-all paused" title="Play"></li>
+						<li id="buttonNext" class="button48  ui-corner-all" title="Next"></li>
+						<li id="buttonStop" class="button48  ui-corner-all" title="Stop"></li>
+					</ul>
+					<div id="volumesliderzone">
+						<div id="volumeSlider" title="Volume"><img src="images/speaker-32.png" class="ui-slider-handle" alt="volume"/></div>
+						<div id="currentVolume" class="dynamic">50%</div>
+					</div>
+					<div id="mediaTitle" class="dynamic"></div>
+					<div id="seekContainer">
+						<div id="currentTime" class="dynamic">00:00:00</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="/js/app.js"></script>
+</html>
