@@ -1,4 +1,4 @@
-# Slim VLC Web Audio Player for Raspberry Pi
+# VLC Web Audio Player for Raspberry Pi
 
 After setting up a [PiMoRoNi PhatBeat](https://shop.pimoroni.com/products/phat-beat) to stream internet radio via VLC audio, I discovered that VLC apparently hasn't updated their web player since 1996.   It is a mish-mash of tiny icons and features that don't apply on a headless Raspberry Pi.
 
@@ -6,7 +6,7 @@ ___
 
 The code in this repository removes unused features, improves the user experience.   It also adds support for showing the actual song being played.
 
-![alt text](https://github.com/eat-sleep-code/vlc-slim-web/blob/master/screenshot.png)
+![alt text](https://github.com/eat-sleep-code/vlc-web_audio_ui/blob/master/screenshot.png)
 ___
 
 ## Implementation
