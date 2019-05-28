@@ -6,7 +6,7 @@ ___
 
 The code in this repository removes unused features, improves the user experience.   It also adds support for showing the actual song being played.
 
-![alt text](https://github.com/eat-sleep-code/vlc-web_audio_ui/blob/master/screenshot.png)
+![alt text](https://github.com/eat-sleep-code/vlc-web-audio-ui/blob/master/screenshot.png?raw=true)
 ___
 
 ## Implementation
