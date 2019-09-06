@@ -13,9 +13,12 @@ ___
 
 * Connect to your Raspberry Pi via SSH.
 * Execute the following commands:
+  * `sudo apt-get install parallel`
   * `cd /usr/share/vlc/lua/http/`
-  * `sudo ls | grep -v requests | parallel rm -rf`
+  * `sudo ls | grep -v requests | sudo parallel rm -rf`
   * `sudo git clone https://github.com/eat-sleep-code/vlc-slim-web`
+  * `mv *.* ../`
+  * `sudo rm -rf vlc-slim-web`
   * `sudo reboot`
 * After the Raspberry Pi reboots, access http://[YOURIP]:8080 
   * If prompted for authentication, leave the username field blank.   The default password is `raspberry`
