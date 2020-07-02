@@ -12,12 +12,18 @@ ___
 ## Implementation
 
 * Connect to your Raspberry Pi via SSH.
+* Install Pimoroni Phat Beat and the VLC Radio project by executing:
+  * `curl https://get.pimoroni.com/vlcradio | bash`
+* If you are using the Buster - or later - release of Raspberry Pi OS (formerly Raspbian) execute the following commands:
+  * `cd Pimoroni/phatbeat/projects/vlc-radio`
+  * `wget https://raw.githubusercontent.com/pimoroni/phat-beat/master/projects/vlc-radio/setup.sh -O setup.sh`
+  * `./setup.sh`
 * Execute the following commands:
   * `sudo apt-get install parallel`
   * `cd /usr/share/vlc/lua/http/`
   * `sudo ls | grep -v requests | sudo parallel rm -rf`
   * `sudo git clone https://github.com/eat-sleep-code/vlc-slim-web`
-  * `mv *.* ../`
+  * `sudo mv vlc-slim-web/* .`
   * `sudo rm -rf vlc-slim-web`
   * `sudo reboot`
 * After the Raspberry Pi reboots, access http://[YOURIP]:8080 
