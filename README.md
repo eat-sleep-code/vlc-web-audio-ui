@@ -1,4 +1,4 @@
-# VLC Web Audio Player for Raspberry Pi
+# VLC Web Audio Player for Raspberry Pi (including Buster!)
 
 After setting up a [PiMoRoNi PhatBeat](https://shop.pimoroni.com/products/phat-beat) to stream internet radio via VLC audio, I discovered that VLC apparently hasn't updated their web player since 1996.   It is a mish-mash of tiny icons and features that don't apply on a headless Raspberry Pi.
 
@@ -32,7 +32,7 @@ ___
 ___
 
 ## Support for extended M3U files
-For the best user experience, update your playlist to use the extended M3U format.   You can edit your playlist with `sudo nano /home/pi/.config/vlc/playlist.m3u`
+For the best user experience, update your playlist to use the extended M3U format.   You can edit your playlist with `sudo nano /home/pi/.config/vlc/playlist.m3u`   You will need to reboot your Raspberry Pi after making changes to the playlist.
 
 The following is an example of the extended M3U file format:
 ```
