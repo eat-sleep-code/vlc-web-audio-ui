@@ -19,6 +19,7 @@ ___
   * `wget https://raw.githubusercontent.com/pimoroni/phat-beat/master/projects/vlc-radio/setup.sh -O setup.sh`
   * `./setup.sh`
 * Execute the following commands:
+  * `sudo mkdir .config\vlc`
   * `sudo apt-get install parallel`
   * `cd /usr/share/vlc/lua/http/`
   * `sudo ls | grep -v requests | sudo parallel rm -rf`
