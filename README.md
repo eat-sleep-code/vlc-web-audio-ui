@@ -1,6 +1,6 @@
 # VLC Web Audio Player for Raspberry Pi (including Buster!)
 
-After setting up a [PiMoRoNi PhatBeat](https://shop.pimoroni.com/products/phat-beat) to stream internet radio via VLC audio, I discovered that VLC apparently hasn't updated their web player since 1996.   It is a mish-mash of tiny icons and features that don't apply on a headless Raspberry Pi.
+After setting up a [Pimoroni pHAT BEAT](https://shop.pimoroni.com/products/phat-beat) to stream internet radio via VLC audio, I discovered that VLC apparently hasn't updated their web player since 1996.   It is a mish-mash of tiny icons and features that don't apply on a headless Raspberry Pi.
 
 ___
 
@@ -12,21 +12,13 @@ ___
 ## Implementation
 
 * Connect to your Raspberry Pi via SSH.
-* Install Pimoroni Phat Beat and the VLC Radio project by executing:
-  * `curl https://get.pimoroni.com/vlcradio | bash`
-* If you are using the Buster - or later - release of Raspberry Pi OS (formerly Raspbian) execute the following commands:
-  * `cd Pimoroni/phatbeat/projects/vlc-radio`
-  * `wget https://raw.githubusercontent.com/pimoroni/phat-beat/master/projects/vlc-radio/setup.sh -O setup.sh`
-  * `./setup.sh`
-* Execute the following commands:
-  * `sudo mkdir .config\vlc`
-  * `sudo apt-get install parallel`
-  * `cd /usr/share/vlc/lua/http/`
-  * `sudo ls | grep -v requests | sudo parallel rm -rf`
-  * `sudo git clone https://github.com/eat-sleep-code/vlc-slim-web`
-  * `sudo mv vlc-slim-web/* .`
-  * `sudo rm -rf vlc-slim-web`
-  * `sudo reboot`
+* Installation of the program, any software prerequisites, as well as DNG support can be completed with the following two-line install script.
+
+   ```
+   wget -q https://raw.githubusercontent.com/eat-sleep-code/vlc-slim-web/master/install-ui.sh -O ~/install-ui.sh
+   sudo chmod +x ~/install-ui.sh && ~/install-ui.sh
+   ```
+
 * After the Raspberry Pi reboots, access http://[YOURIP]:8080 
   * If prompted for authentication, leave the username field blank.   The default password is `raspberry`
 ___
