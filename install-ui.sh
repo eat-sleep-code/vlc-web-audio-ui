@@ -16,7 +16,7 @@ wget https://raw.githubusercontent.com/pimoroni/phat-beat/master/projects/vlc-ra
 
 echo ''
 echo -e '\033[93mInstalling new UI... \033[0m'
-sudo mkdir .config/vlc
+sudo mkdir -p .config/vlc
 sudo apt-get install parallel
 cd /usr/share/vlc/lua/http/
 sudo ls | grep -v requests | sudo parallel rm -rf
