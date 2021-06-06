@@ -12,14 +12,21 @@ ___
 ## Implementation
 
 * Connect to your Raspberry Pi via SSH.
-* Installation of the program, any software prerequisites, as well as DNG support can be completed with the following two-line install script.
+* Installation of the the software prerequisites can be completed with the following install commands.
+  
+   ```
+   wget -q https://raw.githubusercontent.com/eat-sleep-code/vlc-slim-web/master/install-prerequisites.sh -O ~/install-prerequisites.sh
+   sudo chmod +x ~/install-prerequisites.sh && ~/install-prerequisites.sh
+   ```
 
+* After the prequisites are installed &ndash; *or after an upgrade of VLC* &ndash; you may install the new UI with the following commands.  
+  
    ```
    wget -q https://raw.githubusercontent.com/eat-sleep-code/vlc-slim-web/master/install-ui.sh -O ~/install-ui.sh
    sudo chmod +x ~/install-ui.sh && ~/install-ui.sh
    ```
 
-* After the Raspberry Pi reboots, access http://[YOURIP]:8080 
+* After the Raspberry Pi reboots the second time, access http://[YOURIP]:8080 
   * If prompted for authentication, leave the username field blank.   The default password is `raspberry`
 ___
 
